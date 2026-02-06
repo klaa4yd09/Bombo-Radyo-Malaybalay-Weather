@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bombo Radyo Malaybalay Weather</title>
+    <title>SkyPulse Pro | Bombo Radyo Weather</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -23,21 +23,21 @@
             </div>
             <nav class="side-menu">
                 <div id="menu-overview" class="menu-item active" onclick="switchView('overview')">
-                    <i class="fa-solid fa-tower-broadcast"></i> OVERVIEW
+                    <i class="fa-solid fa-tower-broadcast"></i> <span class="nav-text">OVERVIEW</span>
                 </div>
                 <div id="menu-radar" class="menu-item" onclick="switchView('radar')">
-                    <i class="fa-solid fa-satellite-dish"></i> RADAR
+                    <i class="fa-solid fa-satellite-dish"></i> <span class="nav-text">RADAR</span>
                 </div>
                 <div id="menu-storms" class="menu-item" onclick="switchView('storms')">
-                    <i class="fa-solid fa-cloud-bolt"></i> STORMS
+                    <i class="fa-solid fa-cloud-bolt"></i> <span class="nav-text">STORMS</span>
                 </div>
                 <div id="menu-alerts" class="menu-item" onclick="switchView('alerts')">
-                    <i class="fa-solid fa-circle-info"></i> ALERTS
+                    <i class="fa-solid fa-circle-info"></i> <span class="nav-text">ALERTS</span>
                 </div>
             </nav>
             <div class="sidebar-footer">
                 <div class="status-indicator">
-                    <span class="pulse-dot"></span> LIVE UPLINK
+                    <span class="pulse-dot"></span> <span class="status-text">LIVE UPLINK</span>
                 </div>
             </div>
         </aside>
@@ -46,7 +46,7 @@
             <header class="main-header">
                 <div class="search-bar">
                     <i class="fa-solid fa-location-crosshairs"></i>
-                    <input type="text" id="city-input" placeholder="Search City...">
+                    <input type="text" id="city-input" placeholder="CITY...">
                     <button id="search-btn">SYNC</button>
                 </div>
                 <div class="header-info">
@@ -80,20 +80,24 @@
                     <div class="metric"><label>VISIBILITY</label><div class="value-row"><span id="visibility">-- km</span><i class="fa-solid fa-eye"></i></div></div>
                 </div>
 
-                <div class="panel forecast-panel" style="grid-column: span 2;">
+                <div class="panel forecast-panel">
                     <div class="panel-header">5-DAY ATMOSPHERIC PROJECTION</div>
                     <div id="forecast-container" class="forecast-grid"></div>
                 </div>
             </section>
 
-            <section id="view-radar" class="panel radar-container" style="display:none; height: 100%; padding: 0; overflow: hidden;">
-                <div class="panel-header" style="padding: 15px; background: #111;">LIVE DOPPLER RADAR</div>
-                <iframe id="radar-frame" src="" width="100%" height="95%" frameborder="0"></iframe>
+            <section id="view-radar" class="panel map-container-full" style="display:none;">
+                <div class="panel-header">LIVE DOPPLER RADAR</div>
+                <div class="iframe-wrapper">
+                    <iframe id="radar-frame" src="" frameborder="0"></iframe>
+                </div>
             </section>
 
-            <section id="view-storms" class="panel radar-container" style="display:none; height: 100%; padding: 0; overflow: hidden;">
-                <div class="panel-header" style="padding: 15px; background: #111;">STORM TRACKER</div>
-                <iframe id="storms-frame" src="" width="100%" height="95%" frameborder="0"></iframe>
+            <section id="view-storms" class="panel map-container-full" style="display:none;">
+                <div class="panel-header">STORM TRACKER</div>
+                <div class="iframe-wrapper">
+                    <iframe id="storms-frame" src="" frameborder="0"></iframe>
+                </div>
             </section>
 
             <section id="view-alerts" class="panel" style="display:none;">
